@@ -1,0 +1,4 @@
+name: zmk-keyboard-u-3x6-3
+build:
+  settings:
+    board_root: .
