@@ -27,14 +27,14 @@
 / {
     encoder0: encoder0 {
         compatible = "alps,ec11";
-        steps = <80>;
+        steps = <48>;
         status = "disabled";
     };
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder0>;
-        triggers-per-rotation = <20>;
+        triggers-per-rotation = <12>;
     };
 };
 
