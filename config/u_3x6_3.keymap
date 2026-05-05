@@ -104,6 +104,7 @@
         /* -- Layer 0: QWERTY (default) ------------------------------------ */
         default_layer {
             display-name = "Qwrt";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
 // | TAB      | Q        | W        | E        | R        | T        || Y        | U        | I        | O        | P        | BSPC     |
 // | CTRL/ESC | GUI/A    | ALT/S    | CTL/D    | F        | G        || H        | J        | CTL/K    | ALT/L    | GUI/;    | '        |
@@ -119,6 +120,7 @@
         /* -- Layer 1: Numbers / Media ------------------------------------- */
         layer_1 {
             display-name = "Num";
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
             bindings = <
 // | `        | 1        | 2        | 3        | 4        | 5        || 6        | 7        | 8        | 9        | 0        | BSLH     |
 // | ----     | ----     | ----     | VOL-     | VOL+     | MUTE     || LEFT     | 4        | 5        | 6        | MUTE     | PLAY     |
@@ -134,6 +136,7 @@
         /* -- Layer 2: Symbols / Navigation -------------------------------- */
         layer_2 {
             display-name = "Sym";
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
             bindings = <
 // | ----     | ----     | ----     | _        | +        | (        || )        | HOME     | UP       | END      | ----     | DEL      |
 // | ----     | ----     | ----     | =        | -        | [        || ]        | LEFT     | DOWN     | RIGHT    | BRI+     | VOL+     |
@@ -149,6 +152,7 @@
         /* -- Layer 3: Function keys --------------------------------------- */
         layer_3 {
             display-name = "Fn";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
 // | F12      | F1       | F2       | F3       | F4       | F5       || F6       | F7       | F8       | F9       | F10      | F11      |
 // | ----     | ----     | ----     | ----     | ----     | ----     || ----     | ----     | ----     | ----     | ----     | ----     |
@@ -164,6 +168,7 @@
         /* -- Layer 4: Bluetooth ------------------------------------------- */
         layer_4 {
             display-name = "BT";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
 // | UNLOCK   | ----     | ----     | ----     | ----     | ----     || ----     | ----     | ----     | ----     | ----     | OUT TOG  |
 // | ----     | ----     | ----     | ----     | ----     | ----     || ----     | ----     | ----     | ----     | ----     | BT NXT   |
