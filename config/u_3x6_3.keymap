@@ -56,6 +56,15 @@
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
+
+        scroll_up_down: scroll_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            // Optional: Adjust sensitivity
+            // tap-ms = <20>;
+        };
     };
 
 
@@ -91,6 +100,11 @@
         /* ── Home row: F-keys ────────────────────────────── */
         combo_f1          { timeout-ms = <COMBO_TIMEOUT>; require-prior-idle-ms = <COMBO_PRIOR_IDLE>; key-positions = <14 15>; bindings = <&kp F1>;                };
         combo_f4          { timeout-ms = <COMBO_TIMEOUT>; require-prior-idle-ms = <COMBO_PRIOR_IDLE>; key-positions = <16 17>; bindings = <&kp F4>;                };
+
+        combo_bspc        { timeout-ms = <COMBO_TIMEOUT>; require-prior-idle-ms = <COMBO_PRIOR_IDLE>; key-positions = <19 20>; bindings = <&kp BSPC>;              };
+        combo_enter       { timeout-ms = <COMBO_TIMEOUT>; require-prior-idle-ms = <COMBO_PRIOR_IDLE>; key-positions = <20 21>; bindings = <&kp ENTER>;             };
+
+        combo_capsword    { timeout-ms = <COMBO_TIMEOUT>; require-prior-idle-ms = <COMBO_PRIOR_IDLE>; key-positions = <16 19>; bindings = <&capsword>;             };
     };
 
 
@@ -104,15 +118,15 @@
         /* -- Layer 0: QWERTY (default) ------------------------------------ */
         default_layer {
             display-name = "Qwrt";
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 // | TAB      | Q        | W        | E        | R        | T        || Y        | U        | I        | O        | P        | BSPC     |
-// | CTRL/ESC | GUI/A    | ALT/S    | CTL/D    | F        | G        || H        | J        | CTL/K    | ALT/L    | GUI/;    | '        |
+// | CTRL/ESC | GUI/A    | ALT/S    | CTL/D    | GUI/F    | G        || H        | GUI/J    | CTL/K    | ALT/L    | GUI/;    | '        |
 // | SHFT     | Z        | X        | C        | V        | B        || N        | M        | ,        | .        | /        | ENTER    |
 //                                  | GUI      | L1       | SPC      || L2       | L3       | L1       |
-    &kp TAB         &kp Q          &kp W          &kp E          &kp R          &kp T               &kp Y          &kp U          &kp I          &kp O          &kp P          &kp BSPC
-    &mt LCTRL ESC   &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D  &hm_l LSHFT F  &kp G               &kp H          &hm_l LSHFT J  &hm_l LCTRL K  &hm_l LALT L   &hm_l LGUI SEMI &kp SQT
-    &kp LSHFT       &kp Z          &kp X          &kp C          &kp V          &kp B               &kp N          &kp M          &kp COMMA      &kp DOT        &kp FSLH       &kp ENTER
+    &kp TAB         &kp Q          &kp W          &kp E          &kp R          &kp T               &kp Y          &kp U          &kp I          &kp O          &kp P           &kp BSPC
+    &mt LCTRL ESC   &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D  &hm_l LSHFT F  &kp G               &kp H          &hm_r LSHFT J  &hm_r LCTRL K  &hm_r LALT L   &hm_r LGUI SEMI &kp SQT
+    &kp LSHFT       &kp Z          &kp X          &kp C          &kp V          &kp B               &kp N          &kp M          &kp COMMA      &kp DOT        &kp FSLH        &kp ENTER
                                                    &kp LGUI       &mo LAYER1     &kp SPACE           &mo LAYER2     &mo LAYER3     &mo LAYER1
             >;
         };
